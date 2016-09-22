@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: macamen
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: LS
+Implementation-Vendor-Id: com.macamen
+Build-Jdk: 1.8.0_77
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: com.macamenApp.macamen.MacamenApplication
+
