@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+    <div class="panel-heading"><h4>Modificar Cliente</h4></div>
+    <div class="panel-body">
+        <form role="form" role="form" ng-submit="modificarCliente()">
+              <div class="form-group row">
+                  <div class="col-sm-8">
+                    <label for="id" >Id:</label>
+                    <input type="text" disabled ng-model="cliente.id" class="form-control" style="width:300px;height:30px" id="id">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" ng-model="cliente.nombre" class="form-control" style="width:300px;height:30px" id="nombre">
+                    <label for="dir">Direccion:</label>
+                    <input type="text" ng-model="cliente.direccion" class="form-control" style="width:300px;height:30px" id="dir">
+
+                    <label for="tel">Telefono:</label>
+                    <input type="text" ng-model="cliente.telefono" class="form-control" style="width:300px;height:30px"  id="tel">
+                    <label for="fn">Fecha nacimiento:</label>
+                    <input type="text" ng-model="cliente.fNacimiento" class="form-control" style="width:300px;height:30px" id="fn">
+                    <label for="ocu">Ocupacion:</label>
+                    <input type="text" ng-model="cliente.ocupacion" class="form-control" style="width:300px;height:30px" id="ocu">
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-3">
+                        <button type="submit" class="btn btn-Default"><span class="glyphicon glyphicon-plus-sign"></span> Modificar</button>
+                      </div>
+                      <div class="col-sm-3">
+                          <div class="btn btn-default" ng-click="cerrarVentana()"><span class="glyphicon glyphicon-remove"></span>Cancelar</div>
+                      </div>
+
+                  </div>
+              </div>
+        </form>
+    </div>
+
+</div>

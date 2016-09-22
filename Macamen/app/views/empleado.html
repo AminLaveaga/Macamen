@@ -1,0 +1,45 @@
+<div class="contain" align="left" >
+  <h3>Empleados</h3>
+      <div class="col-sm-6">
+          <form role="form" role="form" ng-submit="guardarEmpleado()">
+              <div class="form-group">
+                <label for="id" >Id:</label>
+                <input type="text" ng-model="empleado.id"class="form-control" disabled style="width:300px;height:30px" id="id">
+                <label for="nombre">Nombre:</label>
+                <input type="text" ng-model="empleado.nombre"class="form-control" style="width:300px;height:30px" id="nombre">
+                <label for="dir">Direccion:</label>
+                <input type="text" ng-model="empleado.direccion"class="form-control" style="width:300px;height:30px" id="dir">
+
+                <label for="tel">Telefono:</label>
+                <input type="text" ng-model="empleado.telefono" class="form-control" style="width:300px;height:30px"  id="tel">
+                <label for="fn">Fecha nacimiento:</label>
+                <input type="text" ng-model= "empleado.fNacimiento" class="form-control" style="width:300px;height:30px" id="fn">
+                <br>
+                <button type="submit" class="form-control" style="width:100px;height:30px">Guardar</button>
+              </div>
+        </form>
+      </div>
+    <div class="col-sm-6">
+
+        <table class="table table-striped">
+          <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th></th>
+            <th></th>
+          </thead>
+          <tbody>
+              <tr ng-repeat="datoEmpleado in listaEmpleados track by datoEmpleado.id">
+                <td ng-bind="datoEmpleado.id"></td>
+                <td ng-bind="datoEmpleado.nombre"></td>
+                <td ng-bind="datoEmpleado.telefono"></td>
+                <td><div data-toggle="tooltip" title="Eliminar!" ng-click="eliminarEmpleado(datoEmpleado.id)" class="badge"><span class="glyphicon glyphicon-trash"></span></div></td>
+                <td><div data-toggle="tooltip" title="Modificar!" ng-click="modificarEmpleado(datoEmpleado.id)" class="badge"><span class="glyphicon glyphicon-edit"></span></div></td>
+              </tr>
+          </tbody>
+
+        </table>
+
+    </div>
+</div>

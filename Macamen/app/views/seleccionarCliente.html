@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Seleccionar Cliente</h4></div>
+  <div class="panel-body">
+      <div class="col-sm-6">
+        <label for="fil">Fitrar contenido</label>
+        <input type="text" id="fil" ng-model="filtrarTabla">
+
+        <table class="table table-striped">
+          <thead>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th></th>
+          </thead>
+          <tbody>
+          <tr ng-repeat="datoCliente in listaClientes | filter:filtrarTabla">
+            <td ng-bind="datoCliente.id"></td>
+            <td ng-bind="datoCliente.nombre"></td>
+            <td><div data-toggle="tooltip" title="Agregar a cita!" ng-click="clienteElegido(datoCliente)"  class="badge"><span class="glyphicon glyphicon-plus"></span></div></td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+
+

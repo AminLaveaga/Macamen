@@ -1,0 +1,28 @@
+<table class="table table-bordered" id="tablita">
+  <thead>
+          <th>Horas</th>
+          <th ng-repeat="empleado in empleados" ng-bind="empleado.nombre"></th>
+  </thead>
+  <tbody>
+        <tr ng-repeat="hora in horas">
+            <td ng-bind="hora.hora" ></td>
+            <td  ng-repeat="empleado in empleados" id="{{hora.hora}}{{empleado.nombre}}"></td>
+        </tr>
+  </tbody>
+
+
+</table>
+<br>
+{{citass}}
+
+<br>
+<br>
+
+<ul>
+  <li ng-repeat="todo in citass">{{todo.hora}}</li>
+
+</ul>
+
+<button ng-click="cambiar()">click</button>
+
+

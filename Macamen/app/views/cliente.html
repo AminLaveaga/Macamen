@@ -1,0 +1,51 @@
+<div class="container" align="left" >
+  <h3>Cliente</h3>
+  <div class="row">
+    <div class="col-sm-6">
+      <form role="form" role="form" ng-submit="guardarCliente()">
+
+          <label for="id" >Id:</label>
+          <input type="text" disabled ng-model="cliente.id" class="form-control" style="width:300px;height:30px" id="id">
+          <label for="nombre">Nombre:</label>
+          <input type="text" ng-model="cliente.nombre" class="form-control" style="width:300px;height:30px" id="nombre">
+          <label for="dir">Direccion:</label>
+          <input type="text" ng-model="cliente.direccion" class="form-control" style="width:300px;height:30px" id="dir">
+
+          <label for="tel">Telefono:</label>
+          <input type="text" ng-model="cliente.telefono" class="form-control" style="width:300px;height:30px"  id="tel">
+          <label for="fn">Fecha nacimiento:</label>
+          <input type="text" ng-model="cliente.fNacimiento" class="form-control" style="width:300px;height:30px" id="fn">
+          <label for="ocu">Ocupacion:</label>
+          <input type="text" ng-model="cliente.ocupacion" class="form-control" style="width:300px;height:30px" id="ocu">
+
+          <br>
+          <button type="submit" class="form-control" style="width:100px;height:30px"><span class="glyphicon glyphicon-plus-sign"></span>Guardar</button>
+
+      </form>
+    </div>
+    <div class="col-sm-6">
+      <label for="fil">Fitrar contenido</label>
+      <input type="text" id="fil" ng-model="filtrarTabla">
+        <table class="table table-striped">
+          <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th></th>
+            <th></th>
+          </thead>
+            <tbody>
+              <tr ng-repeat="datoCliente in listaClientes | filter:filtrarTabla">
+                <td ng-bind="datoCliente.id"></td>
+                <td ng-bind="datoCliente.nombre"></td>
+                <td ng-bind="datoCliente.telefono"></td>
+                <td><div data-toggle="tooltip" title="Eliminar!" ng-click="eliminarCliente(datoCliente.id)" class="badge"><span class="glyphicon glyphicon-trash"></span></div></td>
+                <td><div data-toggle="tooltip" title="Modificar!" ng-click="modificarCliente(datoCliente.id)" class="badge"><span class="glyphicon glyphicon-edit"></span></div></td>
+              </tr>
+
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+

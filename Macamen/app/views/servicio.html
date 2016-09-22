@@ -1,0 +1,42 @@
+<div class="container" align="left" >
+<h3>Servicios</h3>
+<div class="row">
+    <div class="col-sm-6">
+      <form role="form" role="form" ng-submit="guardar()">
+        <div class="form-group">
+          <label for="id" >Id:</label>
+          <input type="text" ng-model="servicio.id" disabled class="form-control" style="width:300px;height:30px" id="id">
+          <label for="nombre">Nombre:</label>
+          <input type="text" ng-model="servicio.nombre"  class="form-control" style="width:300px;height:30px" id="nombre">
+          <label for="des">Descripcion:</label>
+          <input type="text" ng-model="servicio.descripcion" class="form-control" style="width:300px;height:30px" id="des">
+          <br>
+          <button type="submit" class="form-control" style="width:100px;height:30px"><span class="glyphicon glyphicon-plus-sign"></span> Guardar</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-6">
+      <table class="table table-striped">
+        <thead>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th></th>
+        <th></th>
+        </thead>
+        <tbody >
+        <tr ng-repeat="datoServicio in listaServicios track by datoServicio.id" >
+          <td ng-bind="datoServicio.id"></td>
+          <td ng-bind="datoServicio.nombre"></td>
+          <td ng-bind="datoServicio.descripcion"></td>
+          <td><div data-toggle="tooltip" title="Eliminar!" ng-click="eliminarServicio(datoServicio.id)" class="badge"><span class="glyphicon glyphicon-trash"></span></div></td>
+          <td><div data-toggle="tooltip" title="Modificar"  ng-click="modificarServicio(datoServicio.id)" class="badge"><span class="glyphicon glyphicon-edit"></span></div></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>
+
+
+</div>
