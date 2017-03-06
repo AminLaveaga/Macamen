@@ -104,8 +104,7 @@ angular.module('macamenApp').controller('citasCtrl',['$uibModal','$scope','servi
 
   };
 
- $scope.servi=[];
-      $scope.emple=[];
+$scope.servicioEmpleado=[];
       $scope.cita;
 
 
@@ -114,18 +113,18 @@ $scope.recorrer=function(){
 
       console.log(""+$scope.fechaSeleccionada);
     for(var i=0;i<$scope.serviciosElegidos.length;i++){
-            var a={"id":$scope.serviciosElegidos[i].id };
-            var b={"id":$scope.empleadosElegidos[i].id };
-            $scope.servi.push(a);
-            $scope.emple.push(b);
+           var a={"empleado":{"id":$scope.empleadosElegidos[i].id},"servicio":{"id":$scope.serviciosElegidos[i].id}};
+
+                       $scope.servicioEmpleado.push(a);
     };
+    console.log($scope.servicioEmpleado+"");
+
   var hora= new Date('1995-12-17T'+$scope.horaSeleccionada.hora+'.000Z');
     $scope.cita={
                     "hora":hora,
                   "fecha":$scope.fechaSeleccionada,
                    "cliente":{"id":$scope.cliente.id},
-                     "empleado":$scope.emple,
-                   "servicio":$scope.servi
+                     "servicioCliente":$scope.servicioEmpleado
 
 
 

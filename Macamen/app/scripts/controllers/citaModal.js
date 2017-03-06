@@ -1,4 +1,4 @@
-angular.module('macamenApp').controller('citaModalCtrl',['$scope','servicioService','empleadoService','citasService','obj',function($scope,servicioService,empleadoService,citasService,obj){
+angular.module('macamenApp').controller('citaModalCtrl',['$scope','servicioService','empleadoService','citasService','obj','$uibModal',function($scope,servicioService,empleadoService,citasService,obj,$uibModal){
 
     $scope.cita={};
 
@@ -160,19 +160,19 @@ $scope.citaConsulta=function(idCita){
                                   $scope.cliente=$scope.cita.cliente;
 
                                  // $scope.serviciosElegidos=$scope.cita.servicio;
-                                  $scope.empleadosElegidos=$scope.cita.empleado;
+                                  //$scope.empleadosElegidos=$scope.cita.empleado;
 
-                                  for(var p=0;p<$scope.cita.servicio.length;p++){
+                                  for(var p=0;p<$scope.cita.servicioCliente.length;p++){
                                           for(var h=0;h<$scope.servicios.length;h++){
-                                                if($scope.servicios[h].id==$scope.cita.servicio[p].id){
+                                                if($scope.servicios[h].id==$scope.cita.servicioCliente[p].servicio.id){
                                                           $scope.servicios[h].ticked=true;
                                                 };
                                           };
 
-
+                                      $scope.empleadosElegidos.push($scope.cita.servicioCliente[p].empleado);
                                        };
 
-                                    console.log("array: "+$scope.servicios[0].ticked);
+
 
                                   },function(error){});
 ///

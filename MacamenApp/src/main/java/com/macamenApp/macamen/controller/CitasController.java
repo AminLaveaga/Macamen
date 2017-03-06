@@ -70,7 +70,7 @@ public class CitasController {
 	}
 	
 	//Citas Por Fecha
-	@RequestMapping(method=RequestMethod.GET, value="/{fecha}")
+	@RequestMapping(method=RequestMethod.GET, value="/fecha/{fecha}")
 	public ArrayList<Citas> citasPorFecha(@PathVariable @DateTimeFormat(pattern="yyyy-MM-dd") Date fecha){
 		
 		return citaNegocio.citasPorFecha(fecha);

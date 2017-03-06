@@ -16,4 +16,7 @@ angular.module('macamenApp')
         return $http({method:'GET',url:'http://localhost:8080/citas/buscar/id/'+id});
     };
 
+    this.consultaPorFecha=function(fecha){
+        return $http({method:'GET',url:'http://localhost:8080/citas/fecha/'+fecha});
+    };
 }]);

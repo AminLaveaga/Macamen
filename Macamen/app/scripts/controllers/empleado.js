@@ -5,7 +5,8 @@ angular.module('macamenApp').controller('empleadoCtrl',['$scope','empleadoServic
                             nombre:"",
                             direccion:"",
                             telefono:"",
-                            fNacimiento:""
+                            fNacimiento:"",
+                            estado:""
           };
 
           $scope.listaEmpleados=[];

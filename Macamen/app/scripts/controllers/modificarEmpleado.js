@@ -3,12 +3,22 @@ angular.module('macamenApp').controller('modificarEmpleadoCtrl',['$scope','$uibM
 
   $.extend(this,$controller('empleadoCtrl',{$scope:$scope}));
 
-  $scope.empleado={};
+  $scope.empleado={
+                      id:"",
+                      nombre:"",
+                      direccion:"",
+                      telefono:"",
+                      fNacimiento:""
+      };
 
       $scope.obtenerEmpleado=function(id){
 
               empleadoService.consultarEmpleado(id).then(function(resul){
-               $scope.empleado=resul.data;
+               $scope.empleado.id=resul.data.id;
+               $scope.empleado.nombre=resul.data.nombre;
+               $scope.empleado.direccion=resul.data.direccion;
+               $scope.empleado.telefono=resul.data.telefono;
+               $scope.empleado.fNacimiento= new Date(""+resul.data.fNacimiento);
 
 
               },function(error){});

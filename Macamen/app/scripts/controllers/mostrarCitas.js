@@ -2,6 +2,8 @@ angular.module('macamenApp').controller('mostrarCitasCtrl',['$scope','$controlle
 
 $.extend(this,$controller('citasCtrl',{$scope:$scope}));
 
+$scope.fecha=new Date();
+
 $scope.horas=[
                           {hora:'09:00 a.m',real:'09:00:00',valor:'16:00:00'},
                           {hora:'09:30 a.m',real:'09:30:00',valor:'16:30:00'},
@@ -35,33 +37,49 @@ $scope.obtener=function(){
       },function(error){});
 };
 
-$scope.citass=[];
 
+$scope.citass=[];
 $scope.cambiar=function(){
 
-    citasService.consultarCitas().then(function(result){
-          $scope.citass=result.data;
 
-         console.log($scope.citass[0].id);
+    var mes=$scope.fecha.getMonth()+1;
+var fechaEnviar=""+$scope.fecha.getFullYear()+"-"+mes+"-"+$scope.fecha.getDate();
+
+
+    citasService.consultaPorFecha(fechaEnviar).then(function(result){
+        $scope.citass=result.data;
+
+
     },function(error){});
+
 
 
 };
 
+$scope.limpiar=function(){
+
+    $("#tablita").find("span").empty();
+
+};
+
+$scope.cambiar();
+
 $scope.$watchCollection('citass', function(newValue, oldValue) {
+              $("#tablita").find("span").remove();
+
             if($scope.citass.length != 0 ){
 
                       for(var i=0;i<$scope.citass.length;i++){
 
                             var empleados=[];
-                                  for(var e=0;e<$scope.citass[i].empleado.length;e++){
+                                  for(var e=0;e<$scope.citass[i].servicioCliente.length;e++){
                                        var b=0;
                                           if(empleados.length != 0){
                                                 for(var h=0;h<empleados.length;h++){
-                                                      if(empleados[h].id != $scope.citass[i].empleado[e].id){ b=1;};
+                                                      if(empleados[h].id == $scope.citass[i].servicioCliente[e].empleado.id){ b=1;};
                                                 };
-                                           if(b == 1){empleados.push($scope.citass[i].empleado[e])};
-                                          }else{empleados.push($scope.citass[i].empleado[e]);};
+                                           if(b == 0){empleados.push($scope.citass[i].servicioCliente[e].empleado)};
+                                          }else{empleados.push($scope.citass[i].servicioCliente[e].empleado);};
                                   };
                                    for(var j=0;j<empleados.length;j++){
                                                       for(var k=0;k<$scope.horas.length;k++){

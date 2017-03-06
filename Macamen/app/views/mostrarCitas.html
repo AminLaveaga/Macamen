@@ -1,4 +1,8 @@
-<table class="table table-bordered" id="tablita">
+<input type="date" ng-change="cambiar()" ng-model="fecha">
+
+<br>
+<br>
+<table class="table table-bordered resize" id="tablita">
   <thead>
           <th>Horas</th>
           <th ng-repeat="empleado in empleados" ng-bind="empleado.nombre"></th>
@@ -13,16 +17,10 @@
 
 </table>
 <br>
-{{citass}}
 
-<br>
-<br>
 
-<ul>
-  <li ng-repeat="todo in citass">{{todo.hora}}</li>
 
-</ul>
 
-<button ng-click="cambiar()">click</button>
+<!--<button ng-click="cambiar()">click</button> -->
 
 
