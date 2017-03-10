@@ -148,7 +148,7 @@ $scope.citaConsulta=function(idCita){
                    citasService.consultarCita(idCita).then(function(result){
                                           $scope.cita=result.data;
 
-                    $scope.fechaSeleccionada=new Date(''+$scope.cita.fecha+'T00:00:00.000Z');
+                    $scope.fechaSeleccionada=new Date(''+$scope.cita.fecha+'T07:00:00.000Z');
 
                                   for(var h=0;h<$scope.horas.length;h++){
                                          if($scope.cita.hora==$scope.horas[h].real){

@@ -1,5 +1,7 @@
 angular.module('macamenApp').controller('mostrarCitasCtrl',['$scope','$controller','empleadoService','citasService','$uibModal',function($scope,$controller,empleadoService,citasService,$uibModal){
 
+document.getElementById("menu").style.visibility="visible";
+
 $.extend(this,$controller('citasCtrl',{$scope:$scope}));
 
 $scope.fecha=new Date();

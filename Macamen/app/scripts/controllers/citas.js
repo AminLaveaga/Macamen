@@ -1,5 +1,7 @@
 angular.module('macamenApp').controller('citasCtrl',['$uibModal','$scope','servicioService','empleadoService','citasService',function($uibModal,$scope,servicioService,empleadoService,citasService){
 
+document.getElementById("menu").style.visibility="visible";
+
   $scope.horas=[
               {hora:'09:00 a.m',valor:'16:00:00'},
               {hora:'09:30 a.m',valor:'16:30:00'},

@@ -1,5 +1,7 @@
 angular.module('macamenApp').controller('empleadoCtrl',['$scope','empleadoService','$uibModal',function($scope,empleadoService,$uibModal){
 
+document.getElementById("menu").style.visibility="visible";
+
           $scope.empleado={
                             id:"",
                             nombre:"",

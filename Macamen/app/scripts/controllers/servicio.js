@@ -2,6 +2,8 @@
 
 angular.module('macamenApp').controller('servicioCtrl',['$scope','servicioService','$uibModal',function($scope,servicioService,$uibModal){
 
+document.getElementById("menu").style.visibility="visible";
+
    $scope.servicio={id:'',
                     nombre:'',
                      descripcion:''

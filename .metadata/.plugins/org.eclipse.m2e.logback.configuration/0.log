@@ -239,3 +239,15 @@
 2017-02-14 17:43:57,358 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources to public
 2017-02-14 17:43:57,385 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-02-14 17:43:57,385 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\LS\Documents\GitHub\Macamen\MacamenApp\src\test\resources
+2017-03-08 00:02:33,208 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-03-08 00:02:33,236 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 29 resources
+2017-03-08 00:02:33,972 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2017-03-08 00:02:34,009 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources to public
+2017-03-08 00:02:34,040 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-03-08 00:02:34,040 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\LS\Documents\GitHub\Macamen\MacamenApp\src\test\resources
+2017-03-08 00:02:40,641 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-03-08 00:02:40,656 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 29 resources
+2017-03-08 00:02:40,666 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2017-03-08 00:02:40,671 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources to public
+2017-03-08 00:02:40,674 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-03-08 00:02:40,675 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\LS\Documents\GitHub\Macamen\MacamenApp\src\test\resources

@@ -1,6 +1,8 @@
 
 angular.module('macamenApp').controller('clienteCtrl',['$scope','clienteService','$uibModal',function($scope,clienteService,$uibModal){
 
+document.getElementById("menu").style.visibility="visible";
+
     $scope.cliente={
                     id:'',
                     nombre:'',
