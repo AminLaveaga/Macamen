@@ -1,42 +1,64 @@
-<div class="container" align="left" >
-<h3>Servicios</h3>
-<div class="row">
-    <div class="col-sm-6">
-      <form role="form" role="form" ng-submit="guardar()">
-        <div class="form-group">
-          <label for="id" >Id:</label>
-          <input type="text" ng-model="servicio.id" disabled class="form-control" style="width:300px;height:30px" id="id">
-          <label for="nombre">Nombre:</label>
-          <input type="text" ng-model="servicio.nombre"  class="form-control" style="width:300px;height:30px" id="nombre">
-          <label for="des">Descripcion:</label>
-          <input type="text" ng-model="servicio.descripcion" class="form-control" style="width:300px;height:30px" id="des">
-          <br>
-          <button type="submit" class="form-control" style="width:100px;height:30px"><span class="glyphicon glyphicon-plus-sign"></span> Guardar</button>
-        </div>
-      </form>
-    </div>
-    <div class="col-sm-6">
-      <table class="table table-striped">
-        <thead>
-        <th>id</th>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-        <th></th>
-        <th></th>
-        </thead>
-        <tbody >
-        <tr ng-repeat="datoServicio in listaServicios track by datoServicio.id" >
-          <td ng-bind="datoServicio.id"></td>
-          <td ng-bind="datoServicio.nombre"></td>
-          <td ng-bind="datoServicio.descripcion"></td>
-          <td><div data-toggle="tooltip" title="Eliminar!" ng-click="eliminarServicio(datoServicio.id)" class="badge"><span class="glyphicon glyphicon-trash"></span></div></td>
-          <td><div data-toggle="tooltip" title="Modificar"  ng-click="modificarServicio(datoServicio.id)" class="badge"><span class="glyphicon glyphicon-edit"></span></div></td>
-        </tr>
-        </tbody>
-      </table>
+
+<div class="container-fluid row">
+  <div class="container-fluid col-sm-12 col-md-12 col-lg-12" align="left" >
+    <h3>Servicios</h3>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <form role="form" class="form-horizontal" name="frmServicio" >
+          <div class="form-group" ng-class="{'has-error': frmServicio.id.$invalid && frmServicio.id.$dirty}">
+            <label class="control-label col-sm-2" for="id"  >ID:</label>
+            <div class="col-sm-10">
+              <input type="text" ng-model="servicio.id" disabled class="form-control"  id="id" name="id" placeholder="ID" ng-required="false">
+            </div>
+          </div>
+          <div class="form-group" ng-class="{'has-error':frmServicio.nombre.$invalid && frmServicio.nombre.$dirty}">
+            <label class="control-label col-sm-2" for="nombre">NOMBRE::</label>
+            <div class="col-sm-10">
+              <input type="text" ng-model="servicio.nombre"  class="form-control"  id="nombre" name="nombre" placeholder="NOMBRE" ng-required="true">
+            </div>
+
+          </div>
+          <div class="form-group" ng-class="{'has-error':frmServicio.des.$invalid && frmServicio.des.$dirty}">
+            <label class="control-label col-sm-2" for="des">DESCRIPCIÓN:</label>
+            <div class="col-sm-10">
+              <input type="text" ng-model="servicio.descripcion" class="form-control" id="des" name="des" placeholder="DESCRIPCIÓN" ng-required="true">
+            </div>
+
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button class="btn btn-default" ng-click="guardar(frmServicio)" ><span class="glyphicon glyphicon-plus-sign"></span> Guardar</button>
+            </div>
+
+          </div>
+
+
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <table class="table table-striped">
+          <thead>
+          <th>id</th>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th></th>
+          <th></th>
+          </thead>
+          <tbody >
+          <tr ng-repeat="datoServicio in listaServicios track by datoServicio.id" >
+            <td ng-bind="datoServicio.id"></td>
+            <td ng-bind="datoServicio.nombre"></td>
+            <td ng-bind="datoServicio.descripcion"></td>
+            <td><div data-toggle="tooltip" title="Eliminar!" ng-click="eliminarServicio(datoServicio.id)" class="badge"><span class="glyphicon glyphicon-trash"></span></div></td>
+            <td><div data-toggle="tooltip" title="Modificar"  ng-click="modificarServicio(datoServicio.id)" class="badge"><span class="glyphicon glyphicon-edit"></span></div></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
 
-</div>
 
+  </div>
 
 </div>

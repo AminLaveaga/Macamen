@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('macamenApp').controller('servicioCtrl',['$scope','servicioService','$uibModal',function($scope,servicioService,$uibModal){
+angular.module('macamenApp').controller('servicioCtrl',['$scope','servicioService','$uibModal','validacionService','inform',function($scope,servicioService,$uibModal,validacionService,inform){
 
 document.getElementById("menu").style.visibility="visible";
 
@@ -31,18 +31,29 @@ document.getElementById("menu").style.visibility="visible";
         });
     };*/
 
-     $scope.guardar=function(){
+     $scope.guardar=function(frmServicio){
 
-          servicioService.guardarServicio($scope.servicio).then(function(result){
-                $scope.obtenerServicios();
-                $scope.servicio={
-                                  id:'',
-                                  nombre:'',
-                                  descripcion:''
-                                };
-          },function(error){
 
-          });
+       if(frmServicio.$valid){
+           servicioService.guardarServicio($scope.servicio).then(function(result){
+                          $scope.obtenerServicios();
+                          $scope.servicio={
+                                            id:'',
+                                            nombre:'',
+                                            descripcion:''
+                                          };
+                    },function(error){
+
+                    });
+           validacionService.clearErrors(frmServicio);
+
+       }else{
+            validacionService.showErrors(frmServicio);
+            inform.add('Existen campos que son requeridos para registrar servicio',{ttl:4000, type:'warning'}
+            )};
+
+
+
      };
 
      $scope.eliminarServicio=function(id){

@@ -1,36 +1,73 @@
-<div class="container" align="left" >
+
+
+<div class="container-fluid row">
+<div class="container-fluid col-sm-12 col-md-12 col-lg-12" align="left" >
   <h3>Cliente</h3>
+
   <div class="row">
-    <div class="col-sm-6">
-      <form role="form" role="form" ng-submit="guardarCliente()">
+    <div class="col-sm-6 col-md-6 col-lg-6">
+      <form role="form"  class="form-horizontal" name="frmCliente" >
 
-          <label for="id" >Id:</label>
-          <input type="text" disabled ng-model="cliente.id" class="form-control" style="width:300px;height:30px" id="id">
-          <label for="nombre">Nombre:</label>
-          <input type="text" ng-model="cliente.nombre" class="form-control" style="width:300px;height:30px" id="nombre">
-          <label for="dir">Direccion:</label>
-          <input type="text" ng-model="cliente.direccion" class="form-control" style="width:300px;height:30px" id="dir">
+        <div class="form-group" ng-class="{ 'has-error': frmCliente.id.$invalid && frmCliente.id.$dirty }">
+          <label class="control-label col-sm-2" for="id">ID:</label>
+          <div class="col-sm-10">
+            <input type="text" disabled class="form-control" id="id" name="id" ng-required="false" placeholder="ID" ng-model="cliente.id">
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': frmCliente.nombre.$invalid && frmCliente.nombre.$dirty }">
+          <label class="control-label col-sm-2" for="nombre">NOMBRE:</label>
+          <div class="col-sm-10">
+            <input type="text"  class="form-control" id="nombre" name="nombre" placeholder="NOMBRE" ng-model="cliente.nombre" ng-required="true">
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': frmCliente.direccion.$invalid && frmCliente.direccion.$dirty }">
+          <label class="control-label col-sm-2" for="direccion">DIRECCIÓN:</label>
+          <div class="col-sm-10">
+            <input type="text"  class="form-control" id="direccion" name="direccion" placeholder="DIRECCION" ng-model="cliente.direccion" ng-required="true">
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': frmCliente.telefono.$invalid && frmCliente.telefono.$dirty }">
+          <label class="control-label col-sm-2" for="tel">TELEFONO:</label>
+          <div class="col-sm-10">
+            <input type="text"  class="form-control" id="tel" name="telefono" placeholder="TELEFONO" ng-model="cliente.telefono" ng-required="true">
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': frmCliente.fechaNacimiento.$invalid && frmCliente.fechaNacimiento.$dirty }">
+          <label class="control-label col-sm-2" for="fechaNacimiento">FECHA DE NACIMIENTO:</label>
+          <div class="col-sm-10">
+            <input type="date"  class="form-control" id="fechaNacimiento" name="fechaNacimiento" placeholder="FECHA DE NACIMIENTO" ng-model="cliente.fNacimiento" ng-required="true">
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': frmCliente.ocupacion.$invalid && frmCliente.ocupacion.$dirty }">
+          <label class="control-label col-sm-2" for="ocupacion">OCUPACIÓN:</label>
+          <div class="col-sm-10">
+            <input type="text"  class="form-control" id="ocupacion" name="ocupacion" placeholder="OCUPACIÓN" ng-model="cliente.ocupacion" ng-required="true">
+          </div>
+        </div>
 
-          <label for="tel">Telefono:</label>
-          <input type="text" ng-model="cliente.telefono" class="form-control" style="width:300px;height:30px"  id="tel">
-          <label for="fn">Fecha nacimiento:</label>
-          <input type="date" ng-model="cliente.fNacimiento" class="form-control" style="width:300px;height:30px" id="fn">
-          <label for="ocu">Ocupacion:</label>
-          <input type="text" ng-model="cliente.ocupacion" class="form-control" style="width:300px;height:30px" id="ocu">
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button  class="btn btn-default" ng-click="guardarCliente(frmCliente)"><span class="glyphicon glyphicon-plus-sign"></span>Guardar</button>
+          </div>
+        </div>
 
-          <br>
-          <button type="submit" class="form-control" style="width:100px;height:30px"><span class="glyphicon glyphicon-plus-sign"></span>Guardar</button>
 
       </form>
     </div>
-    <div class="col-sm-6">
-      <label for="fil">Fitrar contenido</label>
-      <input type="text" id="fil" ng-model="filtrarTabla">
+    <div class="col-sm-6 col-md-6 col-lg-6">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="fil">BUSCAR:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control col-sm-9" id="fil" ng-model="filtrarTabla">
+        </div>
+      </div>
+
+
         <table class="table table-striped">
           <thead>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Telefono</th>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>TELÉFONO</th>
             <th></th>
             <th></th>
           </thead>
@@ -48,4 +85,4 @@
     </div>
   </div>
 </div>
-
+</div>

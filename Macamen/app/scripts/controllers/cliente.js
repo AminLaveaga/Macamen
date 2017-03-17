@@ -1,5 +1,5 @@
 
-angular.module('macamenApp').controller('clienteCtrl',['$scope','clienteService','$uibModal',function($scope,clienteService,$uibModal){
+angular.module('macamenApp').controller('clienteCtrl',['$scope','clienteService','$uibModal','validacionService','growl','atomicNotifyService','inform',function($scope,clienteService,$uibModal,validacionService,growl,atomicNotifyService,inform){
 
 document.getElementById("menu").style.visibility="visible";
 
@@ -20,19 +20,28 @@ document.getElementById("menu").style.visibility="visible";
           },function(error){});
       };
 
-      $scope.guardarCliente=function(){
-        clienteService.guardarCliente($scope.cliente).then(function(result){
-            $scope.obtenerClientes();
-            $scope.cliente={
+      $scope.guardarCliente=function(frmCliente){
+
+        if(frmCliente.$valid){
+                    clienteService.guardarCliente($scope.cliente).then(function(result){
+                        $scope.obtenerClientes();
+                        $scope.cliente={
 
 
-                                nombre:'',
-                                direccion:'',
-                                telefono:'',
-                                ocupacion:'',
-                                fNacimiento:''
-                                };
-        },function(error){});
+                                            nombre:'',
+                                            direccion:'',
+                                            telefono:'',
+                                            ocupacion:'',
+                                            fNacimiento:''
+                                            };
+                    },function(error){});
+         validacionService.clearErrors(frmCliente);
+        }else{
+        validacionService.showErrors(frmCliente);
+        inform.add('Existen campos que son requeridos para registrar clienteS', {
+          ttl: 4000, type: 'warning'
+        });
+        }
       };
 
       $scope.eliminarCliente=function(id){

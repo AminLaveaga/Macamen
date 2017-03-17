@@ -1,4 +1,4 @@
-angular.module('macamenApp').controller('citasCtrl',['$uibModal','$scope','servicioService','empleadoService','citasService',function($uibModal,$scope,servicioService,empleadoService,citasService){
+angular.module('macamenApp').controller('citasCtrl',['$uibModal','$scope','servicioService','empleadoService','citasService','validacionService','inform',function($uibModal,$scope,servicioService,empleadoService,citasService,validacionService,inform){
 
 document.getElementById("menu").style.visibility="visible";
 
@@ -77,7 +77,7 @@ document.getElementById("menu").style.visibility="visible";
           $scope.emple=[];
           $scope.cita;
 
-        location.reload();
+        //location.reload();
   };
 
 
@@ -110,7 +110,7 @@ $scope.servicioEmpleado=[];
       $scope.cita;
 
 
-$scope.recorrer=function(){
+$scope.recorrer=function(frmCita){
 
 
       console.log(""+$scope.fechaSeleccionada);
@@ -132,9 +132,18 @@ $scope.recorrer=function(){
 
   };
 
-    citasService.guardarCita($scope.cita).then(function(resul){},function(error){});
+    if(frmCita.$valid){
+       citasService.guardarCita($scope.cita).then(function(resul){},function(error){});
+        validacionService.clearErrors(frmCita);
+         $scope.vaciarSeleccion();
+    }else{
+          validacionService.showErrors(frmCita);
+          inform.add('existen campos que se requieren para registrar una cita',{ttp:4000,type:'warning'});
+    };
 
-    $scope.vaciarSeleccion();
+
+
+
 };
 
 

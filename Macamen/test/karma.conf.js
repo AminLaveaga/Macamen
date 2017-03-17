@@ -31,6 +31,9 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/isteven-angular-multiselect/isteven-multi-select.js',
+      'bower_components/angular-growl-v2/build/angular-growl.js',
+      'bower_components/angular-atomic-notify/dist/angular-atomic-notify.min.js',
+      'bower_components/angular-inform/dist/angular-inform.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

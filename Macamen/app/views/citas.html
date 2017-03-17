@@ -1,80 +1,79 @@
-<div class="container" align="left" >
-  <h3>Citas</h3>
+<div class="container-fluid row" >
+  <div class="container-fluid col-sm-l2 col-md-12 col-lg-12" align="left">
+    <h3>Citas</h3>
+    <div class="row" align="center">
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <form role="form" class="form-horizontal" name="frmCita">
+          <div class="form-group" ng-class="{'has-error':frmCita.fecha.$invalid && frmCita.fecha.$dirty}">
+            <label class="control-label col-sm-2"  for="fecha">FECHA: </label>
+            <div class="col-sm-10">
+              <input type="date" id="fecha" name="fecha" class="form-control" ng-required="true" ng-model="fechaSeleccionada">
+            </div>
+          </div>
 
-  <form role="form">
-    <div class="row">
-      <div role="form" class="col-sm-6">
-        <div class="form-group">
-          <label  for="fecha">Fecha: </label> <input type="date" id="fecha" name="fecha" class="form-control" ng-model="fechaSeleccionada">
-
-          <label  for="hora">Hora: </label>
-          <select ng-model="horaSeleccionada.hora" id="hora"  class="form-control" >
-            <option ng-repeat="opcion in horas" value="{{opcion.valor}}">{{opcion.hora}}</option>
-          </select>
-
-          <br>
-            <div class="form-inline">
-              <label>Elegir Cliente</label>
-              <input  class="form-control" id="cliente" value="{{cliente.nombre}}">
+          <div class="form-group" ng-class="{'has-error':frmCita.hora.$invalid && frmCita.hora.$dirty}">
+            <label class="control-label col-sm-2" for="hora">HORA: </label>
+            <div class="col-sm-10">
+              <select ng-model="horaSeleccionada.hora" name="hora" id="hora" ng-required="true" class="form-control" >
+                <option ng-repeat="opcion in horas" value="{{opcion.valor}}">{{opcion.hora}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" ng-class="{'has-error':frmCita.cliente.$invalid && frmCita.cliente.$dirty}">
+            <label class="control-label col-sm-2">CLIENTE:</label>
+            <div class="col-sm-9">
+              <input  class="form-control" id="cliente" name="cliente" ng-required="true" value="{{cliente.nombre}}">
+            </div>
+            <div class="col-sm-1">
               <div data-toggle="tooltip" ng-click="seleccionarCliente()" title="Agregar Cliente" class="label label-success label-as-badge"><span class="glyphicon glyphicon-plus" ></span></div>
-
             </div>
 
+          </div>
+          <div class="form-group" ng-class="{'has-error':frmCita.iste.$invalid && frmCita.iste.$dirty}">
+            <label class="control-label col-sm-2">ELEGIR SERVICIOS:</label>
+            <div class="col-sm-3">
+              <isteven-multi-select
+                input-model="servicios"
+                output-model="serviciosElegidos"
+                button-label="nombre"
+                item-label="nombre"
+                tick-property="ticked"
+                translation="localLang" ng-required="true" name="iste" ></isteven-multi-select>
+            </div>
+
+          </div>
+          <div class="form-group" ng-class="{'has-error':frmCita.seleccionEmpleado.$invalid && frmCita.seleccionEmpleado.$dirty}">
+            <label class="control-label col-sm-2"></label>
+            <div class="col-sm-10">
+              <table class="table table-hover">
+                <thead >
+                <th>Servicios</th>
+                <th>Seleccionar Empleado</th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="servicio in serviciosElegidos" >
+                  <td ng-bind="servicio.nombre "></td>
+                  <td><label></label><select name="seleccionEmpleado" ng-required="true" ng-options="empleado.nombre for empleado in empleados" ng-model="$parent.empleadosElegidos[$index]"></select></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button  class="btn btn-default" ng-click="recorrer(frmCita)"><span class="glyphicon glyphicon-plus-sign"></span>Guardar</button>
+            </div>
+          </div>
 
 
-              <label>Seleccione Servicios</label>
-              <div>
-                <isteven-multi-select
-                   input-model="servicios"
-                   output-model="serviciosElegidos"
-                   button-label="nombre"
-                   item-label="nombre"
-                   tick-property="ticked"
-                   translation="localLang"  ></isteven-multi-select>
-              </div>
+        </form>
 
-
-
-            <table class="table table-hover">
-              <thead >
-              <th>Servicios</th>
-              <th>Seleccionar Empleado</th>
-              </thead>
-              <tbody>
-              <tr ng-repeat="servicio in serviciosElegidos" >
-                <td ng-bind="servicio.nombre "></td>
-                <td><label></label><select  ng-options="empleado.nombre for empleado in empleados" ng-model="$parent.empleadosElegidos[$index]"></select></td>
-              </tr>
-              </tbody>
-            </table>
-
-
-
-
-
-
-
-
-
-
-            <br>
-
-
-          <br>
-          <br>
-          <button type="submit" class="form-control" ng-click="recorrer()"style="width:100px;height:30px"><span class="glyphicon glyphicon-plus-sign"></span> Guardar</button>
-        </div>
-
+      </div>
     </div>
 
+  </div>
 
 
-
-
-
-
-
-    </div>
-
-  </form>
 </div>

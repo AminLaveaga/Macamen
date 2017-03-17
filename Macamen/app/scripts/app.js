@@ -17,7 +17,11 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'isteven-multi-select'
+    'isteven-multi-select',
+    'angular-growl',
+    'atomic-notify',
+    'inform'
+
 
 
 
@@ -25,7 +29,8 @@ angular
 
 
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,$locationProvider) {
+    $locationProvider.hashPrefix('');
     $routeProvider
       .when('/', {
         templateUrl: 'views/login.html',

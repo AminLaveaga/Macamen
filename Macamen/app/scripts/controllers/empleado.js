@@ -1,4 +1,4 @@
-angular.module('macamenApp').controller('empleadoCtrl',['$scope','empleadoService','$uibModal',function($scope,empleadoService,$uibModal){
+angular.module('macamenApp').controller('empleadoCtrl',['$scope','empleadoService','$uibModal','validacionService','inform',function($scope,empleadoService,$uibModal,validacionService,inform){
 
 document.getElementById("menu").style.visibility="visible";
 
@@ -19,18 +19,26 @@ document.getElementById("menu").style.visibility="visible";
                     },function(error){});
           };
 
-          $scope.guardarEmpleado= function(){
-                empleadoService.guardarEmpleado($scope.empleado).then(function(result){
-                          $scope.empleado={
-                                                      id:"",
-                                                      nombre:"",
-                                                      direccion:"",
-                                                      telefono:"",
-                                                      fNacimiento:""
-                                    };
+          $scope.guardarEmpleado= function(frmEmpleado){
+            if(frmEmpleado.$valid){
+              empleadoService.guardarEmpleado($scope.empleado).then(function(result){
+                                      $scope.empleado={
+                                                                  id:"",
+                                                                  nombre:"",
+                                                                  direccion:"",
+                                                                  telefono:"",
+                                                                  fNacimiento:""
+                                      };
 
-                $scope.obtenerEmpleados();
-                },function(error){});
+                            $scope.obtenerEmpleados();
+                            },function(error){});
+
+                validacionService.clearErrors(frmEmpleado);
+            }else{
+                validacionService.showErrors(frmEmpleado);
+                inform.add('Existen campos que son requeridos para registrar Empleado',{ttl:4000, type:'warning'});
+
+            };
 
 
           };
