@@ -6,6 +6,9 @@ $.extend(this,$controller('citasCtrl',{$scope:$scope}));
 
 $scope.fecha=new Date();
 
+
+
+
 $scope.horas=[
                           {hora:'09:00 a.m',real:'09:00:00',valor:'16:00:00'},
                           {hora:'09:30 a.m',real:'09:30:00',valor:'16:30:00'},

@@ -251,3 +251,33 @@
 2017-03-08 00:02:40,671 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources to public
 2017-03-08 00:02:40,674 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-03-08 00:02:40,675 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\LS\Documents\GitHub\Macamen\MacamenApp\src\test\resources
+2017-03-31 02:23:38,284 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-03-31 02:23:38,366 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 29 resources
+2017-03-31 02:23:38,981 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2017-03-31 02:23:38,997 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources to public
+2017-03-31 02:23:39,015 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-03-31 02:23:39,016 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\LS\Documents\GitHub\Macamen\MacamenApp\src\test\resources
+2017-03-31 02:32:48,549 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-03-31 02:32:48,559 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 29 resources
+2017-03-31 02:32:48,559 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2017-03-31 02:32:48,569 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources to public
+2017-03-31 02:32:48,569 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-03-31 02:32:48,569 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\LS\Documents\GitHub\Macamen\MacamenApp\src\test\resources
+2017-03-31 02:32:48,979 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-03-31 02:32:48,989 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 29 resources
+2017-03-31 02:32:48,989 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2017-03-31 02:32:48,989 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources to public
+2017-03-31 02:32:48,999 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-03-31 02:32:48,999 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\LS\Documents\GitHub\Macamen\MacamenApp\src\test\resources
+2017-04-10 20:51:41,296 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-10 20:51:41,391 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 29 resources
+2017-04-10 20:51:42,065 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2017-04-10 20:51:42,101 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources to public
+2017-04-10 20:51:42,199 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-10 20:51:42,199 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\LS\Documents\GitHub\Macamen\MacamenApp\src\test\resources
+2017-04-10 20:51:53,547 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-10 20:51:53,602 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 29 resources
+2017-04-10 20:51:53,613 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2017-04-10 20:51:53,621 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources to public
+2017-04-10 20:51:53,627 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-10 20:51:53,627 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\LS\Documents\GitHub\Macamen\MacamenApp\src\test\resources

@@ -32,13 +32,15 @@
 
 
               <label>Seleccione Servicios</label>
-              <div> <isteven-multi-select
+              <div> <!--<isteven-multi-select
                    input-model="servicios"
                    output-model="serviciosElegidos"
                    button-label="nombre"
                    item-label="nombre"
                    tick-property="ticked"
-                   translation="localLang"></isteven-multi-select>
+                   translation="localLang"></isteven-multi-select-->
+               <!-- <oi-select oi-options="p.nombre for p in servicios track by p.id" ng-model="serviciosElegidos" multiple oi-select-options="{closeList : false}" required name="servicios" placeholder="ELEGIR SERVICIOS"></oi-select-->
+                <div ng-dropdown-multiselect="" options="servicios" selected-model="serviciosElegidos" extra-settings="extraSettings" translation-Texts="traduccion" ></div>
               </div>
 
 
@@ -88,3 +90,6 @@
   </div>
 
 </div>
+{{servicios}}
+{{"--------"}}
+{{serviciosElegidos}}

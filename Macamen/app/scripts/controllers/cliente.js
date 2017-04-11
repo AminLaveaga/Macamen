@@ -38,7 +38,7 @@ document.getElementById("menu").style.visibility="visible";
          validacionService.clearErrors(frmCliente);
         }else{
         validacionService.showErrors(frmCliente);
-        inform.add('Existen campos que son requeridos para registrar clienteS', {
+        inform.add('Existen campos que son requeridos para registrar clientes', {
           ttl: 4000, type: 'warning'
         });
         }

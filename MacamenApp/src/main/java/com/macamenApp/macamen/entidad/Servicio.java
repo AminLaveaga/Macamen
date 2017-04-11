@@ -19,8 +19,7 @@ public class Servicio {
 	private String nombre;
 	@Column
 	private String descripcion;
-	@Column
-	private String ticked;
+	
 	
 	
 	public Servicio() {
@@ -28,12 +27,12 @@ public class Servicio {
 	}
 
 
-	public Servicio(Long id, String nombre, String descripcion, String ticked) {
+	public Servicio(Long id, String nombre, String descripcion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
-		this.ticked = ticked;
+		
 	}
 
 
@@ -67,15 +66,7 @@ public class Servicio {
 	}
 
 
-	public String getTicked() {
-		return ticked;
-	}
-
-
-	public void setTicked(String ticked) {
-		this.ticked = ticked;
-	}
-
+	
 
 	
 	

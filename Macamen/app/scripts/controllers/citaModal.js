@@ -31,7 +31,15 @@ angular.module('macamenApp').controller('citaModalCtrl',['$scope','servicioServi
                                         {hora:'07:00 p.m',real:'19:00:00',valor:'02:00:00'},
   ];
 
+  $scope.extraSettings={displayProp:'id',
+                       showCheckAll:false,
+                        showUncheckAll:false,
+                        externalIdProp: '',
 
+                        };
+  $scope.traduccion={buttonDefaultText:'Seleccionar Servicios',
+                     dynamicButtonTextSuffix:'Servicios Seleccionados'
+  };
 
   $scope.horaSeleccionada={"hora":{}};
   $scope.fechaSeleccionada;
@@ -163,12 +171,12 @@ $scope.citaConsulta=function(idCita){
                                   //$scope.empleadosElegidos=$scope.cita.empleado;
 
                                   for(var p=0;p<$scope.cita.servicioCliente.length;p++){
-                                          for(var h=0;h<$scope.servicios.length;h++){
+                                        /*  for(var h=0;h<$scope.servicios.length;h++){
                                                 if($scope.servicios[h].id==$scope.cita.servicioCliente[p].servicio.id){
                                                           $scope.servicios[h].ticked=true;
                                                 };
-                                          };
-
+                                          };*/
+                                      $scope.serviciosElegidos.push($scope.cita.servicioCliente[p].servicio)
                                       $scope.empleadosElegidos.push($scope.cita.servicioCliente[p].empleado);
                                        };
 

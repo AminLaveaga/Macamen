@@ -20,7 +20,10 @@ angular
     'isteven-multi-select',
     'angular-growl',
     'atomic-notify',
-    'inform'
+    'inform',
+    'oi.select',
+    'angularjs-dropdown-multiselect',
+    //'btorfs.multiselect'
 
 
 

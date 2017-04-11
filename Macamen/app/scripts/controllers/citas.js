@@ -2,6 +2,7 @@ angular.module('macamenApp').controller('citasCtrl',['$uibModal','$scope','servi
 
 document.getElementById("menu").style.visibility="visible";
 
+
   $scope.horas=[
               {hora:'09:00 a.m',valor:'16:00:00'},
               {hora:'09:30 a.m',valor:'16:30:00'},
@@ -26,6 +27,16 @@ document.getElementById("menu").style.visibility="visible";
               {hora:'07:00 p.m',valor:'02:00:00'},
   ];
 
+  $scope.extraSettings={displayProp:'nombre',
+                        id:'servicios',
+                       showCheckAll:false,
+                        showUncheckAll:false,
+                        externalIdProp: '',
+
+                        };
+  $scope.traduccion={buttonDefaultText:'Seleccionar Servicios',
+                     dynamicButtonTextSuffix:'Servicios Seleccionados'
+  };
 
 
   $scope.horaSeleccionada={"hora":{}};
@@ -111,8 +122,14 @@ $scope.servicioEmpleado=[];
 
 
 $scope.recorrer=function(frmCita){
+/*
 
+frmCita.fecha.$invalid = true;
+frmCita.fecha.$dirty =  true;
+frmCita.hora.$invalid = true;
+frmCita.hora.$dirty =  true;
 
+*/
       console.log(""+$scope.fechaSeleccionada);
     for(var i=0;i<$scope.serviciosElegidos.length;i++){
            var a={"empleado":{"id":$scope.empleadosElegidos[i].id},"servicio":{"id":$scope.serviciosElegidos[i].id}};
@@ -121,7 +138,7 @@ $scope.recorrer=function(frmCita){
     };
     console.log($scope.servicioEmpleado+"");
 
-  var hora= new Date('1995-12-17T'+$scope.horaSeleccionada.hora+'.000Z');
+  var hora= new Date('1995-12-17T'+$scope.horaSeleccionada.valor+'.000Z');
     $scope.cita={
                     "hora":hora,
                   "fecha":$scope.fechaSeleccionada,
